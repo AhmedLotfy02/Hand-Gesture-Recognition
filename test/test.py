@@ -1,15 +1,16 @@
 import os
 import cv2
+from skimage import feature
+
 import numpy as np
 
 # define the path to the input images
-input_path = r"C:\Users\user\Documents\GitHub\Hand Gesture\Hand-Gesture\input"
+input_path = r"E:\CMP3\Second term\Neural Networks\Project\Project_Dataset_S23-20230429T055712Z-002\Project_Dataset_S23\dataset_sample\men\input"
 
 # define the path to the output preprocessed images
-output_path = r"C:\Users\user\Documents\GitHub\Hand Gesture\Hand-Gesture\output"
-
+output_path = r"E:\CMP3\Second term\Neural Networks\Project\Project_Dataset_S23-20230429T055712Z-002\Project_Dataset_S23\dataset_sample\men\newoutput"
 # define the target size of the preprocessed images
-target_size = (4608, 2592)
+target_size = (64, 64)
 
 # define the preprocessing functions
 
@@ -62,10 +63,13 @@ def normalize_image(img):
     return normalized
 
 
+print(cv2.__version__)
 # loop over the input images
 for filename in os.listdir(input_path):
     # load the image
     img_path = os.path.join(input_path, filename)
+    # print(img_path)
+
     img = cv2.imread(img_path)
 
     # apply the preprocessing pipeline
@@ -79,9 +83,27 @@ for filename in os.listdir(input_path):
     resized = resize_image(masked_image, target_size)
     normalized = normalize_image(resized)
 
-    # save the preprocessed image
-    output_filename = os.path.join(output_path, filename)
-    cv2.imwrite(output_filename, normalized * 255)
+    gray2 = convert_to_gray(normalized)
+    hog_features = feature.hog(gray2, orientations=9, pixels_per_cell=(8, 8),
+                               cells_per_block=(2, 2), block_norm='L2-Hys',
+                               visualize=False, transform_sqrt=True)
+
+    # Initialize a SIFT detector
+    sift = cv2.SIFT_create()
+
+    # Detect keypoints and compute SIFT descriptors
+    keypoints, sift_features = sift.detectAndCompute(gray2, None)
+
+    # Concatenate HoG and SIFT features
+    features = np.concatenate((hog_features, sift_features), axis=0)
+
+    # Print the shape of the concatenated feature vector
+    print('Shape of concatenated feature vector:', features.shape)
+
+# save the preprocessed image
+# output_filename = os.path.join(output_path, filename)
+# cv2.imwrite(output_filename, normalized * 255)
+
 # import cv2
 # import numpy as np
 #
