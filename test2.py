@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from sklearn import svm
+#from sklearn import svm
 
 # Define the list of images to process
 images = ['./0_men (1).jpg', './0_men (2).jpg']
@@ -97,13 +97,13 @@ for image_path in images:
 X = np.array(all_feats)
 # Labels for the images (1 for positive, 0 for negative)
 y = np.array([1, 0, 0])
-svm_model = svm.SVC(kernel='linear', C=1)
-svm_model.fit(X, y)
+# svm_model = svm.SVC(kernel='linear', C=1)
+# svm_model.fit(X, y)
 
-# Use the SVM model to classify new images
-test_img = cv2.imread('test_image.jpg')
-hog_feats_test = hog.compute(test_img)
-kp_test, sift_feats_test = sift.detectAndCompute(test_img, None)
-feats_test = np.concatenate((hog_feats_test.ravel(), sift_feats_test.ravel()))
-X_test = feats_test.reshape(1, -1)
-y_pred = svm_model.predict(X_test)
+# # Use the SVM model to classify new images
+# test_img = cv2.imread('test_image.jpg')
+# hog_feats_test = hog.compute(test_img)
+# kp_test, sift_feats_test = sift.detectAndCompute(test_img, None)
+# feats_test = np.concatenate((hog_feats_test.ravel(), sift_feats_test.ravel()))
+# X_test = feats_test.reshape(1, -1)
+# y_pred = svm_model.predict(X_test)
