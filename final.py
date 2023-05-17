@@ -10,7 +10,7 @@ model = pickle.load(open('SVC.sav', 'rb'))
 pca = pickle.load(open('pca_model.pkl', 'rb'))
 
 # Define the directory containing the test images
-test_dir = 'dataset-5'
+test_dir = 'data'
 
 # Create a list of test image file names sorted in increasing order
 test_files = sorted(os.listdir(test_dir), key=lambda x: int(os.path.splitext(x)[0]))
