@@ -4,6 +4,7 @@ import time
 from Preprocess import *
 from features_extraction import *
 
+
 # Load the trained model from the pickle file
 model = pickle.load(open('SVC.sav', 'rb'))
 # Load the PCA model
@@ -24,13 +25,12 @@ time_file = open('time.txt', 'w')
 # Define the image extensions
 image_extensions = ['.jpg', '.jpeg', '.png', '.bmp', '.gif']
 
-
 # Loop over all test images in increasing order
 for filename in test_files:
     if any(filename.lower().endswith(extension) for extension in image_extensions):
         # Read the test image
         image_path = os.path.join(test_dir, filename)
-        
+
         # Start time
         start_time = time.time()
 
@@ -48,7 +48,6 @@ for filename in test_files:
 
         # Save the prediction in results.txt
         results_file.write(str(prediction[0]) + '\n')
-
         # End time
         end_time = time.time()
 
