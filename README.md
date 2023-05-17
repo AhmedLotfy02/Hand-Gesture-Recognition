@@ -27,4 +27,6 @@
 
 #### Also needed is to have both _**SVC.sav**_ and _**pca_model.pkl**_ in the same directory as the aforementioned files.
 
-#### Create a folder _**data**_ that includes the test images with numerical names **i.e. 1.png**
+#### The pics need to be in one of the following formats [**_jpg_**, **_jpeg_**, **_png_**, **_bmp_**, **_gif_**] 
+
+#### Create a folder _**data**_ that includes the test images with numerical names **_i.e. 1.png_**
