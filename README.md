@@ -43,6 +43,17 @@ We  have been ranked as the **5th team** on the leader-board out of 20 teams wit
         <code>$ git clone https://github.com/AhmedLotfy02/Hand-Gesture-Recognition.git</code>
     </div>
   </li>
+     <li><em>Libraries Needed</em>
+    <div>
+        <code>HoG Skimage</code>
+       <code>OpenCV</code>
+       <code>NumPy</code>
+       <code>sklearn</code>
+        <code>OS</code>
+        <code>Pickle</code>
+        <code>time</code>
+    </div>
+  </li>
   <li><em>You need to run **_final.py_**. Both **_Preprocess.py_** and **_features_extraction.py_** need to be in the same directory as **_final.py_**</em>
   </li>
     <li><em>Also needed is to have both _**SVC.sav**_ and _**pca_model.pkl**_ in the same directory as the aforementioned files.</em>
@@ -56,33 +67,8 @@ We  have been ranked as the **5th team** on the leader-board out of 20 teams wit
 
 
 
- ## Table of Contents
-
- - [Libraries Needed](#Libs)
- - [How to Run](#run-instructions)
-
-## Libraries Needed
- - HoG from Skimage
-
- - OpenCV
-
- - NumPy
-
- - OS
-
- - sklearn
-
- - Pickle
-
- - time 
 
 
-## How to Run
 
-#### You need to run **_final.py_**. Both **_Preprocess.py_** and **_features_extraction.py_** need to be in the same directory as **_final.py_**.
 
-#### Also needed is to have both _**SVC.sav**_ and _**pca_model.pkl**_ in the same directory as the aforementioned files.
 
-#### The pics need to be in one of the following formats [**_jpg_**, **_jpeg_**, **_png_**, **_bmp_**, **_gif_**] 
-
-#### Create a folder _**data**_ that includes the test images with numerical names **_i.e. 1.png_**
