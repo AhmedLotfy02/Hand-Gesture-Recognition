@@ -18,7 +18,7 @@
   - <a href ="#preprocessing"> 🧹 Preprocessing</a>
   - <a href ="#feature"> ✂️ Feature Extraction</a>
   - <a href ="#classification"> ❓ Classification</a>
-  - <a href ="#report"> 📰 Project report</a>
+- <a href ="#report"> 📰 Project report</a>
 - <a href ="#contributors"> ✍️ Contributors</a>
 <br>
 
