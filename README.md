@@ -14,13 +14,12 @@
 - <a href ="#Overview"> 📝 Overview</a>
 - <a href ="#Achievement"> 🎉 Our Achievement</a>
 - <a href ="#started">  🏁 Get Started</a>
-- <a href ="#modules"> 📦 Modules</a>
-  - <a href ="#preprocessing"> 📸 Preprocessing</a>
-  - <a href ="#feature"> ⛏ Feature Extraction</a>
+- <a href ="#modules"> 📜 Project pipeline</a>
+  - <a href ="#preprocessing"> 🧹 Preprocessing</a>
+  - <a href ="#feature"> ✂️ Feature Extraction</a>
   - <a href ="#classification"> ❓ Classification</a>
+  - <a href ="#report"> 📰 Project report</a>
 - <a href ="#contributors"> ✍️ Contributors</a>
-- <a href ="#license"> 🔒 License</a>
-
 <br>
 
 ## 📑 Overview <a id = "Overview"></a>
@@ -66,6 +65,117 @@ We  have been ranked as the **5th team** on the leader-board out of 20 teams wit
 </ol>
 
 
+## 📜 Project pipeline <a id = "modules"></a>
+<p>A complete machine learning pipeline, composed of the following modules:</p>
+
+
+<div align="center">
+   <img align="center" width="525px" src="https://i.postimg.cc/Z5BXjdyt/Preprocessing-1.png" alt="logo">
+</div>
+<br>
+
+## 🧹 Preprocessing <a id = "preprocessing"></a>
+
+<ol>
+  <li><em>Convert to gray</em>
+    <div>
+        <code> to simplify the image by removing color information and focusing on intensity values.</code>
+    </div>
+  </li>
+     <li><em>Apply gaussian blur</em>
+    <div>
+        <code> to reduce noise and smooth out details.</code>
+    </div>
+  </li>
+    </li>
+     <li><em>Apply threshold</em>
+    <div>
+        <code>to convert the grayscale image into a binary image. It uses the Otsu's thresholding method to automatically determine the threshold value.
+</code>
+    </div>
+  </li>
+  </li>
+     <li><em>Find contours</em>
+    <div>
+        <code>Contours: the boundaries of objects in an image.</code>
+    </div>
+   </li>
+    <li><em>Find largest contour</em>
+    <div>
+        <code> based on the contour area.</code>
+    </div>
+  </li>
+  <li><em>Create mask</em>
+    <div>
+        <code> using the largest contour. </code>
+    </div>
+  </li>
+  <li><em>Apply mask</em>
+    <div>
+        <code>  to keep only the region of interest (ROI) within the contour.</code>
+    </div>
+  </li>
+  
+   </li>
+  <li><em>Resize image</em>
+    <div>
+        <code> to a predefined target size. This ensures that all images have the same dimensions for further processing.</code>
+    </div>
+  </li>
+  
+   <li><em>Normalize image</em>
+    <div>
+        <code> Normalizes the image by scaling its pixel values to the range [0, 1] to improve the performance of machine learning algorithms.</code>
+    </div>
+  </li>
+  
+   <li><em>Image enhancement</em>
+    <div>
+        <code> gamma correction is applied to adjust the brightness of the image.  </code><br>
+        <code> histogram equalization is performed to improve the contrast of the image.  </code>
+    </div>
+  </li>
+  
+  <li><em>Background subtraction</em>
+  </li>
+  
+  <li><em>Hand segmentation</em>
+    <div>
+        <code> Shadow Removal is applied via thresholding.  </code><br>
+         <code> Hand Masking using the color range of the human skin.</code><br>
+          <code> Find Contours of the hand. </code><br>
+           <code> Morphological operations are applied to the drawn contours.</code><br>
+    </div>
+  </li>
+
+</ol>
+
+## ✂️ Feature Extraction <a id = "feature"></a>
+
+
+<ul>
+  <li>Histogram of Oriented Gradients(HOG)</li>
+  <li>Principal Component Analysis (PCA)</li>
+</ul>
+
+<br>
+
+
+## ❓ Classification <a id = "classification"></a>
+
+<ul>
+  <li> SVM (Support Vector Machine) model </li>
+    </ul>
+  </li>
+</ul>
+
+
+<br>
+
+
+## 📰 project Report <a id = "report"></a>
+https://docs.google.com/document/d/1uywz1iWL-lTDIG7x8srUjqE_ajOLCpR4LI4gCEy6a9Y/edit
+<br>
 <!-- Contributors -->
 ## ✍️ Contributors <a id = "contributors"></a>
 
